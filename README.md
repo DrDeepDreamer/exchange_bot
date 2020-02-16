@@ -3,7 +3,6 @@ Small exchange rate telegram bot
 
 Installation (For debian based linux systems)
 -----------------------------------
-
 1. Download sources files: `git clone https://github.com/DrDeepDreamer/exchange_bot.git` - it will create folder `exchange_bot/`
 2. CD into exchange_bot folder
 `cd exchange_bot/`
@@ -30,3 +29,8 @@ If you do not need proxy - just comment line `proxy_url` in `config.py`
 
 
 To find it in Telegram: type `@simple_exchange_bot` in search
+
+Implementation Features
+-----------------------------------
+1. The SQL database (sqlite3) is used as a data storage. For caching purposes like in this app it is not the best solution. It would be possible to use Redis with expiring keys. However, in case we want to develop this application to store historical data for graphs - it is the right way. 
+2. Since this software was created for demonstration purposes, there are some shortcomings in the implementation, for example, accessing the SQL file database from different threads. That shouldn't be used in production environments.
